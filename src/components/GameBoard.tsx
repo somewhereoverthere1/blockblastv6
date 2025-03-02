@@ -154,6 +154,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   };
 
   const handleCellClick = (rowIndex: number, colIndex: number) => {
+    // Only handle click placement when draggable pieces is disabled
     if (selectedShape && !draggablePieces) {
       // Find the visual center of the shape by calculating its bounding box
       let minRow = Infinity, minCol = Infinity, maxRow = -Infinity, maxCol = -Infinity;
@@ -171,8 +172,6 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       
       // Adjust the click position to account for the center of the shape
       onCellClick(rowIndex - centerRowOffset, colIndex - centerColOffset);
-    } else {
-      onCellClick(rowIndex, colIndex);
     }
   };
 
