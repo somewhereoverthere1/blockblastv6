@@ -22,7 +22,7 @@ function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [scoreFlash, setScoreFlash] = useState(false);
   const [showGrid, setShowGrid] = useState(true);
-  const [draggablePieces, setDraggablePieces] = useState(true);
+  const [draggablePieces, setDraggablePieces] = useState(false);
 
   // Initialize the game and check for first-time user
   useEffect(() => {
